@@ -1,5 +1,18 @@
-
+/*
 .carousel .item img {
   max-height: 768px;
   min-width: auto;
+}
+*/
+
+.about{
+  background-color: #f5f5f5;
+  padding: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.pizza{
+  background-color: #e90030;
+  color: #f0d2d2;
 }
