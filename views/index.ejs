@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Triomino's pizza™</title>
+    <link rel="icon" href="images/Logo/logo_droit.png">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <% for(var i=0; i<pizza.length; i++){ pizza[i].prix; } %>
+
+        <nav class="navbar fixed-top navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <a class="" href="#"><img src="images/Logo/logo_triominos.png" style="height: 60px;"></a>
+                    <a href="#" style="float: right;"><i class="bi-cart-fill" style="font-size: 38px;"></i></i></a>
+                </a>
+            </div>
+        </nav>
+        <br><br><br>
+        <div class="row mt-3"></div>
+        <div class="container">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="images/Carousel/four.jpg" alt="Los Angeles" style="width:100%;">
+                        <div class="carousel-caption">
+                            <h3>Un savoir-faire de Légende</h3>
+                            <p>Nos pizzas sont préparés par des pizzayollos au talent indéniable.</p>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <img src="images/Carousel/deguster.jpg" alt="Chicago" style="width:100%;">
+                        <div class="carousel-caption">
+                            <h3>Un moment unique</h3>
+                            <p>Les meilleures pizzas Triomino's™ sont celles qu'on partage entre amis.</p>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <img src="images/Carousel/champ.jpg" alt="New york" style="width:100%;">
+                        <div class="carousel-caption">
+                            <h3>Une culture italienne comme à l'époque</h3>
+                            <p>Le blé utilisé dans nos pâtes à pizza provient directement de producteurs siciliens
+                                partenaires.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Left and right controls -->
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="container-fluid p-5 bg-primary text-white text-center">
+            <h1>My First Bootstrap Page</h1>
+            <p>Resize this responsive page to see the effect!</p>
+        </div>
+
+        <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#exampleModal">
+            Essaie ça Louis
+        </button>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Ca marche de fou</h5>
+                        <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form action="" method="post">
+                        <div class="modal-body">
+                            <select class="select" multiple data-mdb-container="#exampleModal" data-mdb-filter="true">
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                                <option value="4">Four</option>
+                                <option value="5">Five</option>
+                                <option value="6">Six</option>
+                                <option value="7">Seven</option>
+                                <option value="8">Eight</option>
+                                <option value="9">Nine</option>
+                                <option value="10">Ten</option>
+                            </select>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
+                                Close
+                            </button>
+                            <button type="submit" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-deck">
+            <img class="card-img-top" src="images/Pizza/Margherita.jpeg" alt="Card image" style="width:400px">
+            <div class="card-body">
+                <h4 class="card-title">Pizza Margarita</h4>
+                <p class="card-text">Composition : Sauce tomate à l'origan et mozzarella.</p>
+                <a href="#" class="btn btn-danger">Retirer du panier</a>
+                <a href="#" class="btn btn-success">Ajouter au panier</a>
+
+            </div>
+        </div>
+        <img class="card-img-top" src="images/Pizza/Reine.jpeg" alt="Card image" style="width:400px">
+        <div class="card-body">
+            <h4 class="card-title">Pizza Reine</h4>
+            <p class="card-text">Composition : Sauce tomate à l'origan, mozzarella, jambon et champignons frais.</p>
+            <a href="#" class="btn btn-danger">Retirer du panier</a>
+            <a href="#" class="btn btn-success stretched-link">Ajouter au panier</a>
+        </div>
+        </div>
+        <img class="card-img-top" src="images/Pizza/Pepperoni.jpeg" alt="Card image" style="width:400px">
+        <div class="card-body">
+            <h4 class="card-title">Pizza Pepperoni</h4>
+            <p class="card-text">Composition : Sauce tomate à l'origan, mozzarella, pepperoni.</p>
+            <a href="#" class="btn btn-danger">Retirer du panier</a>
+            <a href="#" class="btn btn-success stretched-link">Ajouter au panier</a>
+        </div>
+        </div>
+        <img class="card-img-top" src="images/Pizza/4_fromages.jpeg" alt="Card image" style="width:400px">
+        <div class="card-body">
+            <h4 class="card-title">Pizza 4 Fromages</h4>
+            <p class="card-text">Composition : Crème fraîche légère, mozzarella, fromage de chèvre, emmental et Fourme
+                d'Ambert
+                AOP.</p>
+            <a href="#" class="btn btn-danger">Retirer du panier</a>
+            <a href="#" class="btn btn-success stretched-link">Ajouter au panier</a>
+        </div>
+        </div>
+        <img class="card-img-top" src="images/Pizza/Raclette.jpeg" alt="Card image" style="width:400px">
+        <div class="card-body">
+            <h4 class="card-title">Pizza Raclette</h4>
+            <p class="card-text">Composition : Crème fraîche légère, mozzarella, pommes de terre, lardons et fromage à
+                raclette.
+            </p>
+            <a href="#" class="btn btn-danger">Retirer du panier</a>
+            <a href="#" class="btn btn-success stretched-link">Ajouter au panier</a>
+        </div>
+        </div>
+        <img class="card-img-top" src="images/Pizza/chevre_miel.jpeg" alt="Card image" style="width:400px">
+        <div class="card-body">
+            <h4 class="card-title">Pizza Chèvre Miel</h4>
+            <p class="card-text">Composition : Sauce barbecue, mozzarella, jambon, haché au boeuf, lardons, champignons
+                frais et
+                oignons rouges frais.</p>
+            <a href="#" class="btn btn-danger">Retirer du panier</a>
+            <a href="#" class="btn btn-success stretched-link">Ajouter au panier</a>
+        </div>
+        </div>
+        <img class="card-img-top" src="images/Pizza/Texane.jpeg" alt="Card image" style="width:400px">
+        <div class="card-body">
+            <h4 class="card-title">Pizza Texane</h4>
+            <p class="card-text">Composition : Sauce barbecue, mozzarella, jambon, haché au boeuf, lardons, champignons
+                frais et
+                oignons rouges frais.</p>
+            <a href="#" class="btn btn-danger">Retirer du panier</a>
+            <a href="#" class="btn btn-success stretched-link">Ajouter au panier</a>
+        </div>
+        </div>
+        <img class="card-img-top" src="images/Pizza/Nordique.jpeg" alt="Card image" style="width:400px">
+        <div class="card-body">
+            <h4 class="card-title">Pizza Nordique</h4>
+            <p class="card-text">Composition : Crème fraîche légère, mozzarella et saumon fumé.</p>
+            <a href="#" class="btn btn-danger">Retirer du panier</a>
+            <a href="#" class="btn btn-success stretched-link">Ajouter au panier</a>
+        </div>
+        </div>
+        <img class="card-img-top" src="images/Pizza/Margherita.jpeg" alt="Card image" style="width:400px">
+        <div class="card-body">
+            <h4 class="card-title">Pizza a composer</h4>
+            <p class="card-text">Compose toi même ta pizza et sois meilleur pour trouver celle qui fera fondre ton coeur
+            </p>
+            <a href="#" class="btn btn-danger">Retirer du panier</a>
+            <a href="#" class="btn btn-success stretched-link">Ajouter au panier</a>
+        </div>
+        </div>
+        </div>
+
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-sm-4">
+                    <img class="card-img-top" src="images/Pizza/margherita.jpeg" alt="Card image" style="width:400px">
+                    <div class="card-body">
+                        <h4 class="card-title">Pizza a composer</h4>
+                        <p class="card-text">Compose toi même ta pizza et sois meilleur pour trouver celle qui fera
+                            fondre ton coeur
+                        </p>
+                        <a href="#" class="btn btn-primary stretched-link">Ajouter au panier</a>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+
+                    <img class="card-img-top" src="images/Pizza/4_fromages.jpeg" alt="Card image" style="width:400px">
+                    <div class="card-body">
+                        <h4 class="card-title">Pizza a composer</h4>
+                        <p class="card-text">Compose toi même ta pizza et sois meilleur pour trouver celle qui fera
+                            fondre ton coeur
+                        </p>
+                        <a href="#" class="btn btn-primary stretched-link">Ajouter au panier</a>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+
+                    <img class="card-img-top" src="images/Pizza/chevre_miel.jpeg" alt="Card image" style="width:400px">
+                    <div class="card-body">
+                        <h4 class="card-title">Pizza a composer</h4>
+                        <p class="card-text">Compose toi même ta pizza et sois meilleur pour trouver celle qui fera
+                            fondre ton coeur
+                        </p>
+                        <a href="#" class="btn btn-primary stretched-link">Ajouter au panier</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <div id="table"></div>
+
+        <script type="text/javascript">
+            var opts = {
+                url: 'http://localhost:5432/rows/'
+            };
+
+            fetch(opts)
+                .then((res) => {
+                    if (res.ok) {
+                        return res.json();
+                    }
+                })
+                .then((rows) => {
+                    for (let row of rows) {
+                        // row will be a mysql row -- you can loop over these and do what you want with them
+                    }
+                })
+                .catch(console.log);
+        </script>
+
+</body>
+
+</html>
