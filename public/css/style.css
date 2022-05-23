@@ -12,7 +12,7 @@
   margin-bottom: 20px;
 }
 
-.pizza {
+.pizza, .boissons {
   background-color: #e90030;
   color: #f0d2d2;
   margin-top: 20px;
@@ -21,7 +21,15 @@
 
 .entree {
   background-color: #006493;
-  color: #f0d2d2;
+  color: #cbd7ef;
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
+.desserts {
+  background-color: #fbba00;
+  color: #edeac0;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
