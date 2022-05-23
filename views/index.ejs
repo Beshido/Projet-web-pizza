@@ -95,40 +95,48 @@
         <p>Profitez des meilleurs produits</p>
     </div>
 
-    <div class="card-group col justify-content-center">
-        <% pizza; for(var i=0; i<pizza.length; i++){ %>
-        <div class="card">
-            <img class="card-img-top" src="/images/Pizza/Margherita.jpeg" alt="Card image" style="width:100%">
-            <div class="card-body">
-                <h4 class="card-title"><%= pizza[i].nom; %></h4>
-                <div class="card-text">Composition : Sauce tomate à l'origan et mozzarella.</div>
-                <a href="#" class="btn btn-danger">Retirer du panier</a>
-                <a href="#" class="btn btn-success">Ajouter au panier</a>
-            </div>
-        </div>
-        <% } %>
-    </div>
-
-
-
-    <div class="container-fluid p-5 bg-danger text-black-50 text-center">
-        <h1>Les pizzas éxotiques </h1>
-        <p>Moins italiennes dans l'idée mais toujours aussi délicieuses.</p>
-    </div>
-
-    </div>
-    </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-
     <% pizza; for(var i=0; i<pizza.length; i++){ %>
-        <div><a href=''>
-                <%= pizza[i].nom; %>
-            </a></div>
-        <% } %>
+        <% if(i%3==0){ %>
+            <div class="card-group col justify-content-center">
+                <% } %>
+                    <div class="card">
+                        <img class="card-img-top" src="/images/Pizza/<%= pizza[i].image; %>.jpeg" alt="Card image"
+                            style="width:100%">
+                        <div class="card-body">
+                            <h4 class="card-title">
+                                <%= pizza[i].nom; %>
+                            </h4>
+                            <div class="card-text">Composition : Sauce tomate à l'origan et mozzarella.</div>
+                            <a href="#" class="btn btn-danger">Retirer du panier</a>
+                            <a href="#" class="btn btn-success">Ajouter au panier</a>
+                        </div>
+                    </div>
+
+                    <% if((i+1)%3==0){ %>
+            </div>
+            <% } %>
+                <% } %>
+
+
+
+                    <div class="container-fluid p-5 bg-danger text-black-50 text-center">
+                        <h1>Les pizzas éxotiques </h1>
+                        <p>Moins italiennes dans l'idée mais toujours aussi délicieuses.</p>
+                    </div>
+
+                    </div>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+
+                    <% pizza; for(var i=0; i<pizza.length; i++){ %>
+                        <div><a href=''>
+                                <%= pizza[i].nom; %>
+                            </a></div>
+                        <% } %>
 
 
 </body>
