@@ -1,5 +1,5 @@
-/*When over image brightness is increased*/
-card-img-top {
-  -webkit-filter: brightness(1.2);
-  filter: brightness(1.2);
+
+.carousel .item img {
+  max-height: 768px;
+  min-width: auto;
 }
