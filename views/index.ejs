@@ -24,7 +24,7 @@
             <div class=" container-fluid">
                 <a class="navbar-brand" href="#">
                     <a class="" href="#"><img src="/images/Logo/logo_triominos.png" style="height: 60px;"></a>
-                    <button type="button" class="btn btn-demo btn-info" data-toggle="modal" data-target="#myModal2">
+                    <button type="button" class="btn btn-demo btn-info" data-toggle="modal" onclick="show()" data-target="#myModal2">
                         <i class="bi-cart-fill" style="font-size: 38px;"></i>
                     </button>
                 </a>
@@ -159,28 +159,34 @@
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     </div>
                     <div class="modal-body">
-                        <div>
-                            <div>Pizzas :</div>
-                            <div id="panier_pizzas"></div>
-                        </div>
-                        <div>
-                            <div>Entrées :</div>
-                            <div id="panier_entrees"></div>
-                        </div>
-                        <div>
-                            <div>Boissons :</div>
-                            <div id="panier_boissons"></div>
-                        </div>
+                        <form role="form" method="post" action="">
+                            <div>
+                                <div>Pizzas :</div>
+                                <div id="panier_pizzas" name="pizz"></div>
+                            </div>
+                            <div>
+                                <div>Entrées :</div>
+                                <div id="panier_entrees" name="entr"></div>
+                            </div>
+                            <div>
+                                <div>Boissons :</div>
+                                <div id="panier_boissons" name="boiss"></div>
+                            </div>
+                            <div>
+                            <div id="total"></div>
+                            <div>Adresse : <input type="text" id="addr" name="addr"></div>
+                            <div>Téléphone : <input type="text" id="tel" name="tel"></div>
+                            <div>CB : <input type="text"></div>
+                            <div>Date. exp. : <input type="text"></div>
+                            <div>CVV : <input type="text"></div>
+                            <input type="submit" value="Submit">
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     
-
-
-    <br><br><br>
-    <button type="button" class="btn btn-success" onclick="show()"></button>
     <br><br><br>
 
     <script type="text/javascript">
@@ -195,7 +201,8 @@
                 choix_entrees[id]++;
             } else if (type == "boissons") {
                 choix_boissons[id]++;
-            } 
+            }
+            console.log("Type : " + type + " | id : " + id);
         }
 
         function del(type, id){
@@ -205,7 +212,8 @@
                 choix_entrees[id]--;
             } else if (type == "boissons" && choix_boissons[id] > 0) {
                 choix_boissons[id]--;
-            } 
+            }
+            console.log("Type : " + type + " | id : " + id);
         }
 
         function show(){
@@ -215,17 +223,31 @@
             p_pizzas.innerHTML = "";
             p_entrees.innerHTML = "";
             p_boissons.innerHTML = "";
-            '<% for(var i=0; i<12; i++){ %>'
-            if('<%= i %>' < 9 && choix_pizza['<%= i %>'] > 0){
-                p_pizzas.innerHTML += "<div>(" + choix_pizza['<%= i %>'] + ") " + '<%= pizza[i].nom; %>' + "</div>";
-            }
-            if('<%= i %>' < 6 && choix_entrees['<%= i %>'] > 0){
-                p_entrees.innerHTML += "<div>(" + choix_entrees['<%= i %>'] + ") " + '<%= entrees[i].nom; %>' + "</div>";
-            }
-            if('<%= i %>' < 12 && choix_boissons['<%= i %>'] > 0){
-                p_boissons.innerHTML += "<div>(" + choix_boissons['<%= i %>'] + ") " + '<%= boissons[i].nom; %>' + "</div>";
+            var total = 0;
+            '<% for(var i=0; i<9; i++){ %>'
+            if(choix_pizza['<%= i %>'] > 0){
+                p_pizzas.innerHTML += "<div>(" + choix_pizza['<%= i %>'] + ") " + '<%= pizza[i].nom %>' + "</div>";
+                total += '<%= pizza[i].prix %>' * choix_pizza['<%= i %>'];
             }
             '<% } %>'
+            '<% for(var i=0; i<6; i++){ %>'
+            if(choix_entrees['<%= i %>'] > 0){
+                p_entrees.innerHTML += "<div>(" + choix_entrees['<%= i %>'] + ") " + '<%= entrees[i].nom %>' + "</div>";
+                total += '<%= entrees[i].prix %>' * choix_entrees['<%= i %>'];
+            }
+            '<% } %>'
+            '<% for(var i=0; i<12; i++){ %>'
+            if(choix_boissons['<%= i %>'] > 0){
+                p_boissons.innerHTML += "<div>(" + choix_boissons['<%= i %>'] + ") " + '<%= boissons[i].nom %>' + " | " + '<%= boissons[i].taille %>' + "</div>";
+                total += '<%= boissons[i].prix %>' * choix_boissons['<%= i %>'];
+            }
+            '<% } %>'
+            var p_total = document.getElementById("total");
+            p_total.innerHTML = "Total : " + total + "€";
+        }
+        
+        function sendData(){
+
         }
     </script>
     </body>
