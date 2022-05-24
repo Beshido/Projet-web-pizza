@@ -159,7 +159,18 @@
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     </div>
                     <div class="modal-body">
-                        <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.</p>
+                        <div>
+                            <div>Pizzas :</div>
+                            <div id="panier_pizzas"></div>
+                        </div>
+                        <div>
+                            <div>Entrées :</div>
+                            <div id="panier_entrees"></div>
+                        </div>
+                        <div>
+                            <div>Boissons :</div>
+                            <div id="panier_boissons"></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -198,10 +209,23 @@
         }
 
         function show(){
-            console.log("==============================")
-            console.log(choix_pizza);
-            console.log(choix_entrees);
-            console.log(choix_boissons);
+            var p_pizzas = document.getElementById("panier_pizzas");
+            var p_entrees = document.getElementById("panier_entrees");
+            var p_boissons = document.getElementById("panier_boissons");
+            p_pizzas.innerHTML = "";
+            p_entrees.innerHTML = "";
+            p_boissons.innerHTML = "";
+            '<% for(var i=0; i<12; i++){ %>'
+            if('<%= i %>' < 9 && choix_pizza['<%= i %>'] > 0){
+                p_pizzas.innerHTML += "<div>(" + choix_pizza['<%= i %>'] + ") " + '<%= pizza[i].nom; %>' + "</div>";
+            }
+            if('<%= i %>' < 6 && choix_entrees['<%= i %>'] > 0){
+                p_entrees.innerHTML += "<div>(" + choix_entrees['<%= i %>'] + ") " + '<%= entrees[i].nom; %>' + "</div>";
+            }
+            if('<%= i %>' < 12 && choix_boissons['<%= i %>'] > 0){
+                p_boissons.innerHTML += "<div>(" + choix_boissons['<%= i %>'] + ") " + '<%= boissons[i].nom; %>' + "</div>";
+            }
+            '<% } %>'
         }
     </script>
     </body>
