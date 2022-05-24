@@ -18,6 +18,7 @@
     crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/bootstrap-multiselect.js"></script>
     <link rel="stylesheet" href="css/bootstrap-multiselect.css" type="text/css"/>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 </head>
 
 <body>
@@ -173,128 +174,143 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-        <button type="button" class="btn btn-primary">Ajouter au panier</button>
+        <button type="button" class="btn btn-success">Ajouter au panier</button>
       </div>
     </div>
   </div>
 </div>
-<section class="pt-5 pb-5">
-  <div class="container">
-    <div class="row w-100">
-        <div class="col-lg-12 col-md-12 col-12">
-            <h3 class="display-5 mb-2 text-center">Shopping Cart</h3>
-            <p class="mb-5 text-center">
-                <i class="text-info font-weight-bold">3</i> items in your cart</p>
-            <table id="shoppingCart" class="table table-condensed table-responsive">
-                <thead>
-                    <tr>
-                        <th style="width:60%">Product</th>
-                        <th style="width:12%">Price</th>
-                        <th style="width:10%">Quantity</th>
-                        <th style="width:16%"></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td data-th="Product">
-                            <div class="row">
-                                <div class="col-md-3 text-left">
-                                    <img src="https://via.placeholder.com/250x250/5fa9f8/ffffff" alt="" class="img-fluid d-none d-md-block rounded mb-2 shadow ">
-                                </div>
-                                <div class="col-md-9 text-left mt-sm-2">
-                                    <h4>Product Name</h4>
-                                    <p class="font-weight-light">Brand &amp; Name</p>
-                                </div>
-                            </div>
-                        </td>
-                        <td data-th="Price">$49.00</td>
-                        <td data-th="Quantity">
-                            <input type="number" class="form-control form-control-lg text-center" value="1">
-                        </td>
-                        <td class="actions" data-th="">
-                            <div class="text-right">
-                                <button class="btn btn-white border-secondary bg-white btn-md mb-2">
-                                    <i class="fas fa-sync"></i>
-                                </button>
-                                <button class="btn btn-white border-secondary bg-white btn-md mb-2">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td data-th="Product">
-                            <div class="row">
-                                <div class="col-md-3 text-left">
-                                    <img src="https://via.placeholder.com/250x250/5fa9f8/ffffff" alt="" class="img-fluid d-none d-md-block rounded mb-2 shadow ">
-                                </div>
-                                <div class="col-md-9 text-left mt-sm-2">
-                                    <h4>Product Name</h4>
-                                    <p class="font-weight-light">Brand &amp; Name</p>
-                                </div>
-                            </div>
-                        </td>
-                        <td data-th="Price">$49.00</td>
-                        <td data-th="Quantity">
-                            <input type="number" class="form-control form-control-lg text-center" value="1">
-                        </td>
-                        <td class="actions" data-th="">
-                            <div class="text-right">
-                                <button class="btn btn-white border-secondary bg-white btn-md mb-2">
-                                    <i class="fas fa-sync"></i>
-                                </button>
-                                <button class="btn btn-white border-secondary bg-white btn-md mb-2">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td data-th="Product">
-                            <div class="row">
-                                <div class="col-md-3 text-left">
-                                    <img src="https://via.placeholder.com/250x250/5fa9f8/ffffff" alt="" class="img-fluid d-none d-md-block rounded mb-2 shadow ">
-                                </div>
-                                <div class="col-md-9 text-left mt-sm-2">
-                                    <h4>Product Name</h4>
-                                    <p class="font-weight-light">Brand &amp; Name</p>
-                                </div>
-                            </div>
-                        </td>
-                        <td data-th="Price">$49.00</td>
-                        <td data-th="Quantity">
-                            <input type="number" class="form-control form-control-lg text-center" value="1">
-                        </td>
-                        <td class="actions" data-th="">
-                            <div class="text-right">
-                                <button class="btn btn-white border-secondary bg-white btn-md mb-2">
-                                    <i class="fas fa-sync"></i>
-                                </button>
-                                <button class="btn btn-white border-secondary bg-white btn-md mb-2">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <div class="float-right text-right">
-                <h4>Subtotal:</h4>
-                <h1>$99.00</h1>
-            </div>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#exampleModal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form action="" method="post">
+        <div class="modal-body">
+          <select class="select" multiple data-mdb-container="#exampleModal" data-mdb-filter="true">
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+            <option value="4">Four</option>
+            <option value="5">Five</option>
+            <option value="6">Six</option>
+            <option value="7">Seven</option>
+            <option value="8">Eight</option>
+            <option value="9">Nine</option>
+            <option value="10">Ten</option>
+          </select>
         </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
+            Close
+          </button>
+          <button type="submit" class="btn btn-primary">Save changes</button>
+        </div>
+      </form>
     </div>
-    <div class="row mt-4 d-flex align-items-center">
-        <div class="col-sm-6 order-md-2 text-right">
-            <a href="catalog.html" class="btn btn-primary mb-4 btn-lg pl-5 pr-5">Checkout</a>
-        </div>
-        <div class="col-sm-6 mb-3 mb-m-1 order-md-1 text-md-left">
-            <a href="catalog.html">
-                <i class="fas fa-arrow-left mr-2"></i> Continue Shopping</a>
-        </div>
-    </div>
+  </div>
 </div>
-</section>
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container">
+	<table id="cart" class="table table-hover table-condensed">
+    				<thead>
+						<tr>
+							<th style="width:50%">Product</th>
+							<th style="width:10%">Price</th>
+							<th style="width:8%">Quantity</th>
+							<th style="width:22%" class="text-center">Subtotal</th>
+							<th style="width:10%"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td data-th="Product">
+								<div class="row">
+									<div class="col-sm-2 hidden-xs"><img src="http://placehold.it/100x100" alt="..." class="img-responsive"/></div>
+									<div class="col-sm-10">
+										<h4 class="nomargin">Product 1</h4>
+										<p>Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet.</p>
+									</div>
+								</div>
+							</td>
+							<td data-th="Price">$1.99</td>
+							<td data-th="Quantity">
+								<input type="number" class="form-control text-center" value="1">
+							</td>
+							<td data-th="Subtotal" class="text-center">1.99</td>
+							<td class="actions" data-th="">
+								<button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
+								<button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>								
+							</td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr class="visible-xs">
+							<td class="text-center"><strong>Total 1.99</strong></td>
+						</tr>
+						<tr>
+							<td><a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
+							<td colspan="2" class="hidden-xs"></td>
+							<td class="hidden-xs text-center"><strong>Total $1.99</strong></td>
+							<td><a href="#" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>
+						</tr>
+
+            <nav>
+              <div class="container">
+                <ul class="navbar-left">
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#about">About</a></li>
+                </ul> <!--end navbar-left -->
+            
+                <ul class="navbar-right">
+                  <li><a href="#" id="cart"><i class="fa fa-shopping-cart"></i> Cart <span class="badge">3</span></a></li>
+                </ul> <!--end navbar-right -->
+              </div> <!--end container -->
+            </nav>
+            
+            
+            <div class="container">
+              <div class="shopping-cart">
+                <div class="shopping-cart-header">
+                  <i class="fa fa-shopping-cart cart-icon"></i><span class="badge">3</span>
+                  <div class="shopping-cart-total">
+                    <span class="lighter-text">Total:</span>
+                    <span class="main-color-text">$2,229.97</span>
+                  </div>
+                </div> <!--end shopping-cart-header -->
+            
+                <ul class="shopping-cart-items">
+                  <li class="clearfix">
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/cart-item1.jpg" alt="item1" />
+                    <span class="item-name">Sony DSC-RX100M III</span>
+                    <span class="item-price">$849.99</span>
+                  </li>
+            
+                  <li class="clearfix">
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/cart-item2.jpg" alt="item1" />
+                    <span class="item-name">KS Automatic Mechanic...</span>
+                    <span class="item-price">$1,249.99</span>
+                  </li>
+            
+                  <li class="clearfix">
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/cart-item3.jpg" alt="item1" />
+                    <span class="item-name">Kindle, 6" Glare-Free To...</span>
+                    <span class="item-price">$129.99</span>
+                  </li>
+                </ul>
+            
+                <a href="#" class="button">Payement</a>
+              </div> <!--end shopping-cart -->
+            </div> <!--end container -->
+					
 
 </body>
 
