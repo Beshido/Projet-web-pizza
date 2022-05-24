@@ -104,7 +104,7 @@
                             style="width:100%">
                         <div class="card-body">
                             <h4 class="card-title">
-                                <%= pizza[i].nom; %>
+                                <%= pizza[i].nom; %> - <%= pizza[i].prix; %>€
                             </h4>
                             <div class="card-text"> DESCRIPTION </div>
                             <a href="#" class="btn btn-success">Ajouter au panier</a>
@@ -115,35 +115,9 @@
             </div>
             <% } %>
                 <% } %>
-            <!-- -------------------------------------------- -->
-            <div class="container-fluid p-5 text-center entree">
-                <h1>Nos Entrées</h1>
-                <p>Profitez des meilleures salades et autres entrées</p>
-            </div>
-
-            <% for(var i=0; i<entree.length; i++){ %>
-                <% if(i%3==0){ %>
-                    <div class="card-group col justify-content-center">
-                        <% } %>
-                            <div class="card">
-                                <img class="card-img-top" src="/images/Entrees/<%= entree[i].image; %>.jpeg" alt="Card image"
-                                    style="width:100%">
-                                <div class="card-body">
-                                    <h4 class="card-title">
-                                        <%= entree[i].nom; %>
-                                    </h4>
-                                    <a href="#" class="btn btn-success">Ajouter au panier</a>
-                                </div>
-                            </div>
-        
-                            <% if((i+1)%3==0){ %>
-                    </div>
-                    <% } %>
-                        <% } %>
-
-                        <!-- -------------------------------------------- -->
-                    <div class="container-fluid p-5 text-center desserts">
-                        <h1>Nos Desserts</h1>
+                    <!-- -------------------------------------------- -->
+                    <div class="container-fluid p-5 text-center entree">
+                        <h1>Nos Entrées</h1>
                         <p>Profitez des meilleures salades et autres entrées</p>
                     </div>
 
@@ -152,47 +126,78 @@
                             <div class="card-group col justify-content-center">
                                 <% } %>
                                     <div class="card">
-                                        <img class="card-img-top" src="/images/Desserts/<%= desserts[i].image; %>.jpeg" alt="Card image"
-                                            style="width:100%">
+                                        <img class="card-img-top" src="/images/Entrees/<%= entree[i].image; %>.jpeg"
+                                            alt="Card image" style="width:100%">
                                         <div class="card-body">
                                             <h4 class="card-title">
-                                                <%= desserts[i].nom; %>
+                                                <%= entree[i].nom; %> - <%= entree[i].prix; %>€
                                             </h4>
                                             <a href="#" class="btn btn-success">Ajouter au panier</a>
                                         </div>
                                     </div>
-                
+
                                     <% if((i+1)%3==0){ %>
                             </div>
                             <% } %>
                                 <% } %>
 
-                                <!-- -------------------------------------------- -->
-                            <div class="container-fluid p-5 text-center boissons">
-                                <h1>Nos Desserts</h1>
-                                <p>Profitez des meilleures salades et autres entrées</p>
-                            </div>
-        
-                            <% for(var i=0; i<boissons.length; i++){ %>
-                                <% if(i%3==0){ %>
-                                    <div class="card-group col justify-content-center">
-                                        <% } %>
-                                            <div class="card">
-                                                <img class="card-img-top" src="/images/Boissons/<%= boissons[i].image; %>.jpg" alt="Card image"
-                                                    style="width:400px">
-                                                <div class="card-body">
-                                                    <h4 class="card-title">
-                                                        <%= boissons[i].nom; %>
-                                                    </h4>
-                                                    <div class="card-text"> <%= boissons[i].taille; %> </div>
-                                                    <a href="#" class="btn btn-success">Ajouter au panier</a>
-                                                </div>
-                                            </div>
-                        
-                                            <% if((i+1)%3==0){ %>
+                                    <!-- -------------------------------------------- -->
+                                    <div class="container-fluid p-5 text-center desserts">
+                                        <h1>Nos Desserts</h1>
+                                        <p>Miam, il te faut encore un peu de place pour un délicieux dessert</p>
                                     </div>
-                                    <% } %>
-                                        <% } %>
+
+                                    <% for(var i=0; i<entree.length; i++){ %>
+                                        <% if(i%3==0){ %>
+                                            <div class="card-group col justify-content-center">
+                                                <% } %>
+                                                    <div class="card">
+                                                        <img class="card-img-top"
+                                                            src="/images/Desserts/<%= desserts[i].image; %>.jpeg"
+                                                            alt="Card image" style="width:100%">
+                                                        <div class="card-body">
+                                                            <h4 class="card-title">
+                                                                <%= desserts[i].nom; %> - <%= desserts[i].prix; %>€
+                                                            </h4>
+                                                            <a href="#" class="btn btn-success">Ajouter au panier</a>
+                                                        </div>
+                                                    </div>
+
+                                                    <% if((i+1)%3==0){ %>
+                                            </div>
+                                            <% } %>
+                                                <% } %>
+
+                                                    <!-- -------------------------------------------- -->
+                                                    <div class="container-fluid p-5 text-center boissons">
+                                                        <h1>Nos Boissons</h1>
+                                                        <p>N'oubliez pas de vous raffraichir</p>
+                                                    </div>
+
+                                                    <% for(var i=0; i<boissons.length; i++){ %>
+                                                        <% if(i%3==0){ %>
+                                                            <div class="card-group col justify-content-center">
+                                                                <% } %>
+                                                                    <div class="card">
+                                                                        <img class="card-img-top"
+                                                                            src="/images/Boissons/<%= boissons[i].image; %>.jpg"
+                                                                            alt="Card image" style="width:400px">
+                                                                        <div class="card-body">
+                                                                            <h4 class="card-title">
+                                                                                <%= boissons[i].nom; %> - <%= boissons[i].prix; %>€
+                                                                            </h4>
+                                                                            <div class="card-text">
+                                                                                <%= boissons[i].taille; %>
+                                                                            </div>
+                                                                            <a href="#" class="btn btn-success">Ajouter
+                                                                                au panier</a>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <% if((i+1)%3==0){ %>
+                                                            </div>
+                                                            <% } %>
+                                                                <% } %>
 
 
 </body>
