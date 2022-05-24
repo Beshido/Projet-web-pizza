@@ -13,9 +13,10 @@ client.connect();
 
 let menu;
 let pizza;
-let entree;
+let entrees;
 let desserts;
 let boissons;
+let ingredients;
 
 
 client.query('SELECT * FROM menu', (err, res) => {
@@ -40,7 +41,7 @@ client.query('SELECT * FROM entree', (err, res) => {
     if (err) {
         console.log(res.message)
     } else {
-        entree = res.rows;
+        entrees = res.rows;
     }
     //client.end();
 })
@@ -63,6 +64,15 @@ client.query('SELECT * FROM boissons', (err, res) => {
     //client.end();
 })
 
+client.query('SELECT * FROM ingredients', (err, res) => {
+    if (err) {
+        console.log(res.message)
+    } else {
+        ingredients = res.rows;
+    }
+    //client.end();
+})
+
 // create app
 const express = require('express');
 const path = require('path');
@@ -73,7 +83,7 @@ app.use('/public/.', express.static('./public'));
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', (req, res) => {
-    res.render('./index.ejs', { menu: menu, pizza: pizza, entree: entree, desserts: desserts, boissons: boissons });
+    res.render('./index.ejs', { menu: menu, pizza: pizza, entrees: entrees, desserts: desserts, boissons: boissons, ingredients: ingredients });
 })
 
 var server = app.listen(4000, function () {
