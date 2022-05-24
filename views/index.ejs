@@ -113,7 +113,32 @@
                                 <%= pizza[i].nom; %> - <%= pizza[i].prix; %>€
                             </h4>
                             <div class="card-text"> DESCRIPTION </div>
-                            <a href="#" class="btn btn-success">Ajouter au panier</a>
+                            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                Ajouter au panier
+                              </button>
+                              
+                              <!-- Modal -->
+                              <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h5 class="modal-title" id="staticBackdropLabel">Personnaliser votre article.</article></h5>
+                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <select class="selectpicker" multiple data-live-search="true">
+                                            <option>Mustard</option>
+                                            <option>Ketchup</option>
+                                            <option>Relish</option>
+                                          </select>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                                      <button type="button" class="btn btn-success">Ajouter au panier</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
                         </div>
                     </div>
 
@@ -138,7 +163,32 @@
                                             <h4 class="card-title">
                                                 <%= entree[i].nom; %> - <%= entree[i].prix; %>€
                                             </h4>
-                                            <a href="#" class="btn btn-success">Ajouter au panier</a>
+                                            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                                Ajouter au panier
+                                              </button>
+                                              
+                                              <!-- Modal -->
+                                              <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                  <div class="modal-content">
+                                                    <div class="modal-header">
+                                                      <h5 class="modal-title" id="staticBackdropLabel">Personnaliser votre article.</article></h5>
+                                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <select class="selectpicker" multiple data-live-search="true">
+                                                            <option>Mustard</option>
+                                                            <option>Ketchup</option>
+                                                            <option>Relish</option>
+                                                          </select>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                                                      <button type="button" class="btn btn-success">Ajouter au panier</button>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
                                         </div>
                                     </div>
 
@@ -165,7 +215,32 @@
                                                             <h4 class="card-title">
                                                                 <%= desserts[i].nom; %> - <%= desserts[i].prix; %>€
                                                             </h4>
-                                                            <a href="#" class="btn btn-success">Ajouter au panier</a>
+                                                            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                                                Ajouter au panier
+                                                              </button>
+                                                              
+                                                              <!-- Modal -->
+                                                              <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                                                <div class="modal-dialog">
+                                                                  <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                      <h5 class="modal-title" id="staticBackdropLabel">Personnaliser votre article.</article></h5>
+                                                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        <select class="selectpicker" multiple data-live-search="true">
+                                                                            <option>Mustard</option>
+                                                                            <option>Ketchup</option>
+                                                                            <option>Relish</option>
+                                                                          </select>
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                                                                      <button type="button" class="btn btn-success">Ajouter au panier</button>
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                                              </div>
                                                         </div>
                                                     </div>
 
@@ -195,8 +270,32 @@
                                                                             <div class="card-text">
                                                                                 <%= boissons[i].taille; %>
                                                                             </div>
-                                                                            <a href="#" class="btn btn-success">Ajouter
-                                                                                au panier</a>
+                                                                            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                                                                Ajouter au panier
+                                                                              </button>
+                                                                              
+                                                                              <!-- Modal -->
+                                                                              <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                                                                <div class="modal-dialog">
+                                                                                  <div class="modal-content">
+                                                                                    <div class="modal-header">
+                                                                                      <h5 class="modal-title" id="staticBackdropLabel">Personnaliser votre article.</article></h5>
+                                                                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                                    </div>
+                                                                                    <div class="modal-body">
+                                                                                        <select class="selectpicker" multiple data-live-search="true">
+                                                                                            <option>Mustard</option>
+                                                                                            <option>Ketchup</option>
+                                                                                            <option>Relish</option>
+                                                                                          </select>
+                                                                                    </div>
+                                                                                    <div class="modal-footer">
+                                                                                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                                                                                      <button type="button" class="btn btn-success">Ajouter au panier</button>
+                                                                                    </div>
+                                                                                  </div>
+                                                                                </div>
+                                                                              </div>
                                                                         </div>
                                                                     </div>
 
