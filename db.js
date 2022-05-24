@@ -87,5 +87,5 @@ app.get('/', (req, res) => {
 })
 
 var server = app.listen(4000, function () {
-    console.log('listening to port 4000')
+    console.log('Port 4000')
 });
