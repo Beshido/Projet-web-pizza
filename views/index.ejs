@@ -103,12 +103,8 @@
                     <div class="card-body">
                         <h4 class="card-title"><%= pizza[i].nom; %> - <%= pizza[i].prix; %>€</h4>
                         <div class="card-text"><%= pizza[i].taille; %></div>
-                        <button type="button" class="btn btn-danger">
-                            <i class="bi bi-dash-circle"></i>
-                        </button>
-                        <button type="button" class="btn btn-success">
-                            <i class="bi bi-plus-circle"></i>
-                        </button>
+                        <button type="button" class="btn btn-danger"><i class="bi bi-dash-circle" onclick="del('pizza', '<%= i %>')"></i></button>
+                        <button type="button" class="btn btn-success"><i class="bi bi-plus-circle" onclick="add('pizza', '<%= i %>')"></i> </button>
                     </div>
                 </div><% if((i+1)%3==0){ %>
             </div><% } %><% } %>
@@ -126,12 +122,8 @@
                     <div class="card-body">
                         <h4 class="card-title"><%= entrees[i].nom; %> - <%= entrees[i].prix; %>€</h4>
                         <div class="card-text"><%= entrees[i].taille; %></div>
-                        <button type="button" class="btn btn-danger">
-                            <i class="bi bi-dash-circle"></i>
-                        </button>
-                        <button type="button" class="btn btn-success">
-                            <i class="bi bi-plus-circle"></i>
-                        </button>
+                        <button type="button" class="btn btn-danger"><i class="bi bi-dash-circle" onclick="del('entrees', '<%= i %>')"></i></button>
+                        <button type="button" class="btn btn-success"><i class="bi bi-plus-circle" onclick="add('entrees', '<%= i %>')"></i> </button>
                     </div>
                 </div><% if((i+1)%3==0){ %>
             </div><% } %><% } %>
@@ -149,19 +141,46 @@
                 <div class="card-body">
                     <h4 class="card-title"><%= boissons[i].nom; %> - <%= boissons[i].prix; %>€</h4>
                     <div class="card-text"><%= boissons[i].taille; %></div>
-                    <button type="button" class="btn btn-danger">
-                        <i class="bi bi-dash-circle"></i>
-                    </button>
-                    <button type="button" class="btn btn-success">
-                        <i class="bi bi-plus-circle"></i>
-                    </button>
+                    <button type="button" class="btn btn-danger"><i class="bi bi-dash-circle" onclick="del('boissons', '<%= i %>')"></i></button>
+                    <button type="button" class="btn btn-success"><i class="bi bi-plus-circle" onclick="add('boissons', '<%= i %>')"></i> </button>
                 </div>
             </div><% if((i+1)%3==0){ %>
         </div><% } %><% } %>
 
-    
+    <br><br><br>
+    <button type="button" class="btn btn-success" onclick="show()"></button>
+    <br><br><br>
     <script type="text/javascript">
-        
+        var choix_pizza = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+        var choix_entrees = [0, 0, 0, 0, 0, 0];
+        var choix_boissons = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+        function add(type, id) {
+            if (type == "pizza") {
+                choix_pizza[id]++;
+            } else if (type == "entrees") {
+                choix_entrees[id]++;
+            } else if (type == "boissons") {
+                choix_boissons[id]++;
+            } 
+        }
+
+        function del(type, id){
+            if (type == "pizza" && choix_pizza[id] > 0) {
+                choix_pizza[id]--;
+            } else if (type == "entrees" && choix_entrees[id] > 0) {
+                choix_entrees[id]--;
+            } else if (type == "boissons" && choix_boissons[id] > 0) {
+                choix_boissons[id]--;
+            } 
+        }
+
+        function show(){
+            console.log("==============================")
+            console.log(choix_pizza);
+            console.log(choix_entrees);
+            console.log(choix_boissons);
+        }
     </script>
     </body>
 </html>
