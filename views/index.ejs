@@ -24,7 +24,9 @@
             <div class=" container-fluid">
                 <a class="navbar-brand" href="#">
                     <a class="" href="#"><img src="/images/Logo/logo_triominos.png" style="height: 60px;"></a>
-                    <a href="#" style="float: right;"><i class="bi-cart-fill" style="font-size: 38px;"></i></i></a>
+                    <button type="button" class="btn btn-demo btn-info" data-toggle="modal" data-target="#myModal2">
+                        <i class="bi-cart-fill" style="font-size: 38px;"></i>
+                    </button>
                 </a>
             </div>
         </nav>
@@ -146,10 +148,30 @@
                 </div>
             </div><% if((i+1)%3==0){ %>
         </div><% } %><% } %>
+    <br><br><br>
+    
+    
+    <div class="container demo">
+        <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
 
     <br><br><br>
     <button type="button" class="btn btn-success" onclick="show()"></button>
     <br><br><br>
+
     <script type="text/javascript">
         var choix_pizza = [0, 0, 0, 0, 0, 0, 0, 0, 0];
         var choix_entrees = [0, 0, 0, 0, 0, 0];
